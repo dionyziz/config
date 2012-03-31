@@ -1,4 +1,4 @@
-set bs=2
+set backspace=2
 set ignorecase smartcase
 set autoindent smartindent
 set gdefault hlsearch incsearch showmatch
