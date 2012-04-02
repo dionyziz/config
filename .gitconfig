@@ -1,0 +1,9 @@
+[color]
+    ui = true
+[format]
+    pretty = full
+[core]
+    editor = vim
+[user]
+	name = Dionysis Zindros
+	email = dionyziz@gmail.com
