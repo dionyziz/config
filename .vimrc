@@ -151,3 +151,17 @@ augroup END
 map N Nzz
 map n nzz
 
+autocmd FileType c         set makeprg=gcc\ -O2
+autocmd FileType cpp       set makeprg=g++
+
+" Save, compile and run files
+function! CompileAndRun()
+  write
+  silent! make %
+  redraw!
+  cwindow
+  if len(getqflist()) == 0
+    exec '!time ./a.out'
+  endif
+endfunction
+nnoremap <leader>c :call CompileAndRun()<cr>
