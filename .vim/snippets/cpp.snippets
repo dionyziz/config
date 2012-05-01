@@ -1,6 +1,6 @@
 # Read File Into Vector
 snippet readfile
-	std::vector<char> v;
+	vector<char> v;
 	if ( FILE *${2:fp} = fopen( ${1:"filename"}, "r" ) ) {
 		char buf[ 1024 ];
 		while ( size_t len = fread( buf, 1, sizeof( buf ), $2 ) )
@@ -9,10 +9,21 @@ snippet readfile
 	}${3}
 # std::map
 snippet map
-	std::map< ${1:key}, ${2:value} > map${3};
+	map< ${1:int}, ${2:int} > ${3:m};
+snippet multimap
+	map< ${1:int}, ${2:int} > ${3:m};
+snippet list
+	list< ${1:int} > ${2:l};
+snippet queue
+	queue< ${1:int} > ${2:q};
+snippet stack
+	stack< ${1:int} > ${2:s};
 # std::vector
 snippet vector
-	std::vector< ${1:char} > v${2};
+	vector< ${1:int} > ${2};
+# std::set
+snippet set
+	set< ${1:int} > ${2};
 # Namespace
 snippet ns
 	namespace ${1:`Filename('', 'my')`} {
@@ -33,3 +44,23 @@ snippet inc
 	#include <${1:cstdio}>${2}
 snippet use
 	using namespace ${1:std};
+snippet forset
+	for ( set< ${2:int} >::iterator ${3:it} = ${1:s}.begin(); $3 != $1.end(); ++$3 ) {
+		${4}
+	}
+snippet forvector
+	for ( vector< ${2:int} >::iterator ${3:it} = ${1:v}.begin(); $3 < $1.end(); ++$3 ) {
+		${4}
+	}
+snippet formap
+	for ( map< ${2:int}, ${3:int} >::iterator ${4:it} = ${1:m}.begin(); $4 != $1.end(); ++$4 ) {
+		${5}
+	}
+snippet formultimap
+	for ( multimap< ${2:int}, ${3:int} >::iterator ${4:it} = ${1:m}.begin(); $4 != $1.end(); ++$4 ) {
+		${5}
+	}
+snippet forlist
+	for ( list< ${2:int} >::iterator ${3:it} = ${1:m}.begin(); $3 != $1.end(); ++$3 ) {
+		${4}
+	}
