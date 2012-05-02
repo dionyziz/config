@@ -28,6 +28,12 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# mkdir, cd into it
+mkcd () {
+    mkdir -p "$*"
+    cd "$*"
+}
+
 alias -s html=vim
 alias -s php=vim
 alias -s css=vim
