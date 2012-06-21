@@ -152,8 +152,8 @@ augroup END
 map N Nzz
 map n nzz
 
-autocmd FileType c         set makeprg=gcc\ -O2
-autocmd FileType cpp       set makeprg=g++\ -O2
+autocmd FileType c         set makeprg=gcc\ -Wall\ -O2
+autocmd FileType cpp       set makeprg=g++\ -Wall\ -O2
 
 " Save, compile and run files
 function! CompileAndRun()

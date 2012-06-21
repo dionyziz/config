@@ -1,5 +1,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
+EDITOR=vim
+editor=vim
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -34,6 +36,11 @@ mkcd () {
     cd "$*"
 }
 
+cdl () {
+    cd "$*"
+    ls -la
+}
+
 alias -s html=vim
 alias -s php=vim
 alias -s css=vim
@@ -41,6 +48,7 @@ alias -s js=vim
 alias -s py=vim
 alias -s sql=vim
 alias -s cpp=vim
+alias -s y=vim
 alias -s c=vim
 alias -s h=vim
 alias -s txt=vim
