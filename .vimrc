@@ -1,4 +1,4 @@
-" Version: 1.23
+" Version: 1.24
 if &term =~ "xterm" || &term =~ "screen"
  set t_Co=256
  if has("terminfo")
@@ -52,6 +52,8 @@ nnoremap <leader>pp :set paste<cr>
 nnoremap <leader>np :set nopaste<cr>
 nnoremap j gj
 nnoremap k gk
+nnoremap gj j
+nnoremap gk k
 nnoremap <up> gk
 nnoremap <down> gj
 
@@ -66,6 +68,8 @@ function! Mosh_Tab_Or_Complete()
     else
         return "\<Tab>"
 endfunction
+
+vmap C :s/^/\/\/<cr>gv:s/^\/\/\/\/<cr>gv:s/^<cr>:noh<cr>
 
 :inoremap <Tab> <C-R>=Mosh_Tab_Or_Complete()<CR>
 

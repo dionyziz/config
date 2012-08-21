@@ -1,0 +1,8 @@
+#include <cstdio>
+
+using namespace std;
+
+int main() {
+    return 0;
+}
+# cursor: 5 del
