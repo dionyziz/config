@@ -57,4 +57,6 @@ bindkey -v
 bindkey '^R' history-incremental-search-backward
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/games:/home/dionyziz/.rvm/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/games:/home/dionyziz/.rvm/bin:/home/dionyziz/.npm/coffee-script/1.4.0/package/bin
+currentUsers=$(expr $(users | sed "s/ /\n/g" | sort | uniq | wc -l) - 1)
+export PS1='$FG[089][$currentUsers] %(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)%#%{$reset_color%} '
