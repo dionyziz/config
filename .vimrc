@@ -36,11 +36,11 @@ set vb t_vb=
 set ruler
 set cursorline
 syntax on
-set smartindent
 setlocal spell spelllang=en
 set nospell
 set encoding=utf-8
 set number
+set modeline
 nnoremap / /\v
 vnoremap / /\v
 nnoremap ? ?\v
