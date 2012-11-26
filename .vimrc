@@ -10,7 +10,7 @@ if &term =~ "xterm" || &term =~ "screen"
  endif
 endif
 
-" call pathogen#infect()
+call pathogen#infect()
 
 let g:molokai_original = 1
 :colorscheme molokai
