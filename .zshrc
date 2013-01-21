@@ -53,10 +53,34 @@ alias -s c=vim
 alias -s h=vim
 alias -s txt=vim
 
+setopt AUTO_PUSHD
+
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/games:/home/dionyziz/.rvm/bin:/home/dionyziz/.npm/coffee-script/1.4.0/package/bin
-currentUsers=$(expr $(users | sed "s/ /\n/g" | sort | uniq | wc -l) - 1)
-export PS1='$FG[089][$currentUsers] %(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)%#%{$reset_color%} '
+
+setopt PROMPT_SUBST
+export PROMPT='$FG[089][$(users|sed "s/ /\n/g"|sort|uniq|grep -v `whoami`|wc -l)] %(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)%#%{$reset_color%} '
+
+schedprompt() {
+    emulate -L zsh
+    zmodload -i zsh/sched
+
+    # Remove existing event, so that multiple calls to
+    # "schedprompt" work OK.  (You could put one in precmd to push
+    # the timer 30 seconds into the future, for example.)
+    integer i=${"${(@)zsh_scheduled_events#*:*:}"[(I)schedprompt]}
+    (( i )) && sched -$i
+
+    # Test that zle is running before calling the widget (recommended
+    # to avoid error messages).
+    # Otherwise it updates on entry to zle, so there's no loss.
+    zle && zle reset-prompt
+
+    # This ensures we're not too far off the start of the minute
+    sched +1 schedprompt
+}
+
+schedprompt
