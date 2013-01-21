@@ -7,3 +7,5 @@
 [user]
 	name = Dionysis Zindros
 	email = dionyziz@gmail.com
+[credential]
+	helper = cache --timeout=3600
