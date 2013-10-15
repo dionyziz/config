@@ -58,9 +58,17 @@ setopt AUTO_PUSHD
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 
+export MAVEN_OPTS="-Xmx2048m -XX:MaxPermSize=512m"
+export _JAVA_OPTIONS="-Xmx2g"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
+
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/games:/home/dionyziz/.rvm/bin:/home/dionyziz/.npm/coffee-script/1.4.0/package/bin
 
+`zinc -J"-Xmx2G" -nailed`
+
+setopt shwordsplit
 setopt PROMPT_SUBST
 export PROMPT='$FG[089][$(users|sed "s/ /\n/g"|sort|uniq|grep -v `whoami`|wc -l)] %(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)%#%{$reset_color%} '
 
@@ -84,3 +92,6 @@ schedprompt() {
 }
 
 schedprompt
+
+# rbenv setup - https://github.com/sstephenson/rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

@@ -9,3 +9,7 @@
 	email = dionyziz@gmail.com
 [credential]
 	helper = cache --timeout=3600
+[diff]
+	renames = true
+[push]
+	default = nothing

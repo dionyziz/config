@@ -86,6 +86,11 @@ vmap C :s/^/\/\/<cr>gv:s/^\/\/\/\/<cr>gv:s/^<cr>:noh<cr>
 
 autocmd BufRead,BufNewFile *.php setfiletype=php
 
+" ruby stuffs
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+
 " Ctrl + L to lint in PHP
 :autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
 :noremap <C-L> :!/usr/bin/php -l %<CR>
