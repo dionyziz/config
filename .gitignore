@@ -1,2 +1,8 @@
 .vim/undodir
 .vim/.netrwhist
+.DS_Store
+*.swp
+*~
+.bundle
+.secret
+database.yml

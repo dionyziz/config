@@ -26,7 +26,7 @@ ZSH_THEME="gentoo"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git virtualenvwrapper)
+plugins=(gitfast)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -61,11 +61,6 @@ bindkey '^R' history-incremental-search-backward
 export MAVEN_OPTS="-Xmx2048m -XX:MaxPermSize=512m"
 export _JAVA_OPTIONS="-Xmx2g"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
-
-# Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/games:/home/dionyziz/.rvm/bin:/home/dionyziz/.npm/coffee-script/1.4.0/package/bin
-
 `zinc -J"-Xmx2G" -nailed`
 
 setopt shwordsplit
@@ -95,3 +90,6 @@ schedprompt
 
 # rbenv setup - https://github.com/sstephenson/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

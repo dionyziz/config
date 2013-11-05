@@ -60,6 +60,7 @@ nnoremap <down> gj
 filetype plugin on 
 set ofu=syntaxcomplete#Complete
 au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
+au BufNewFile,BufRead *.less set filetype=less
 
 " Tab autocompletes
 function! Mosh_Tab_Or_Complete()
