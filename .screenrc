@@ -21,7 +21,7 @@ pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
 # termcapinfo  * '' 'hs:ts=\E_:fs=\E\\:ds=\E_\E\\'
 
 # make the shell in every window a login shell
-#shell -$SHELL
+shell -$SHELL
 
 # autoaka testing
 # shellaka '> |tcsh'

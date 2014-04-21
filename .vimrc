@@ -62,6 +62,7 @@ nnoremap <down> gj
 filetype plugin on 
 set ofu=syntaxcomplete#Complete
 au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
+au BufNewFile,BufRead *.less set filetype=less
 
 " Tab autocompletes
 function! Mosh_Tab_Or_Complete()
@@ -76,6 +77,11 @@ vmap C :s/^/\/\/<cr>gv:s/^\/\/\/\/<cr>gv:s/^<cr>:noh<cr>
 :inoremap <Tab> <C-R>=Mosh_Tab_Or_Complete()<CR>
 
 autocmd BufRead,BufNewFile *.php setfiletype=php
+
+" ruby stuffs
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 " Ctrl + L to lint in PHP
 :autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
