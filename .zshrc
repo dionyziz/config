@@ -52,8 +52,10 @@ alias -s y=vim
 alias -s c=vim
 alias -s h=vim
 alias -s txt=vim
+alias -s log=tail
 
 setopt AUTO_PUSHD
+setopt BRACE_CCL
 
 bindkey -v
 bindkey '^R' history-incremental-search-backward
@@ -84,3 +86,7 @@ schedprompt() {
 }
 
 schedprompt
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
