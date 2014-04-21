@@ -14,6 +14,7 @@ call pathogen#infect()
 
 let g:molokai_original = 1
 :colorscheme molokai
+
 " Requires vim 7.3
 " set undodir=~/.vim/undodir
 " set undofile
@@ -50,6 +51,7 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <leader>t :tabnew<cr>:e<space>
 nnoremap <leader>pp :set paste<cr>
 nnoremap <leader>np :set nopaste<cr>
+nnoremap <leader>z <C-w><C-w>
 nnoremap j gj
 nnoremap k gk
 nnoremap gj j
@@ -72,17 +74,6 @@ endfunction
 vmap C :s/^/\/\/<cr>gv:s/^\/\/\/\/<cr>gv:s/^<cr>:noh<cr>
 
 :inoremap <Tab> <C-R>=Mosh_Tab_Or_Complete()<CR>
-
-" Ctrl + T opens new tab
-:nmap <C-S-tab> :tabprevious<cr>
-:nmap <C-tab> :tabnext<cr>
-:nmap <C-t> :tabnew<cr>
-:map <C-t> :tabnew<cr>:e<space> 
-:map <C-S-tab> :tabprevious<cr>
-:map <C-tab> :tabnext<cr>
-:imap <C-S-tab> <ESC>:tabprevious<cr>i
-:imap <C-tab> <ESC>:tabnext<cr>i
-:imap <C-t> <ESC>:tabnew<cr>
 
 autocmd BufRead,BufNewFile *.php setfiletype=php
 
@@ -170,3 +161,11 @@ function! CompileAndRun()
   endif
 endfunction
 nnoremap <leader>c :call CompileAndRun()<cr>
+
+" Python-specific settings
+set foldmethod=indent
+set foldlevel=99
+
+" Split behavior
+set splitbelow
+set splitright
