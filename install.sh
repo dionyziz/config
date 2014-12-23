@@ -6,7 +6,7 @@ git submodule init
 git submodule update
 
 all=false
-for file in $(ls -a|grep "^.[a-z]")
+for file in $(ls -a|grep "^.[a-z]"|grep -v "^\.git$")
 do
   yes=false
   if [[ "$all" = false ]] 
