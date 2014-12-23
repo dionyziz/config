@@ -2,6 +2,9 @@
 
 cd "$(dirname "$0")"
 
+git submodule init
+git submodule update
+
 all=false
 for file in $(ls -a|grep "^.[a-z]")
 do
