@@ -164,6 +164,7 @@ map n nzz
 
 autocmd FileType c         set makeprg=gcc\ -Wall\ -O2
 autocmd FileType cpp       set makeprg=g++\ -Wall\ -O2
+autocmd FileType python    set makeprg=python3
 
 " Save, compile and run files
 function! CompileAndRun()
