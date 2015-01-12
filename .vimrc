@@ -14,15 +14,16 @@ call pathogen#infect()
 
 let g:molokai_original = 1
 :colorscheme molokai
+
 " Requires vim 7.3
 " set undodir=~/.vim/undodir
 " set undofile
 " set undolevels=1000
 " set undoreload=10000
 set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set bs=2
 set ignorecase
 set smartcase
@@ -50,6 +51,7 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <leader>t :tabnew<cr>:e<space>
 nnoremap <leader>pp :set paste<cr>
 nnoremap <leader>np :set nopaste<cr>
+nnoremap <leader>z <C-w><C-w>
 nnoremap j gj
 nnoremap k gk
 nnoremap gj j
@@ -74,20 +76,9 @@ vmap C :s/^/\/\/<cr>gv:s/^\/\/\/\/<cr>gv:s/^<cr>:noh<cr>
 
 :inoremap <Tab> <C-R>=Mosh_Tab_Or_Complete()<CR>
 
-" Ctrl + T opens new tab
-:nmap <C-S-tab> :tabprevious<cr>
-:nmap <C-tab> :tabnext<cr>
-:nmap <C-t> :tabnew<cr>
-:map <C-t> :tabnew<cr>:e<space> 
-:map <C-S-tab> :tabprevious<cr>
-:map <C-tab> :tabnext<cr>
-:imap <C-S-tab> <ESC>:tabprevious<cr>i
-:imap <C-tab> <ESC>:tabnext<cr>i
-:imap <C-t> <ESC>:tabnew<cr>
-
 autocmd BufRead,BufNewFile *.php setfiletype=php
 
-" ruby stuffs
+" ruby stuff
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
@@ -110,6 +101,9 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 " Common typos
 :iab functino function
 :iab fales false
+
+" Trailing whitespace
+autocmd FileType c,cpp,java,php,python,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 command! W :w
 command! Q :q
@@ -177,3 +171,11 @@ function! CompileAndRun()
   endif
 endfunction
 nnoremap <leader>c :call CompileAndRun()<cr>
+
+" Python-specific settings
+set foldmethod=indent
+set foldlevel=99
+
+" Split behavior
+set splitbelow
+set splitright

@@ -52,16 +52,16 @@ alias -s y=vim
 alias -s c=vim
 alias -s h=vim
 alias -s txt=vim
+alias -s log=tail
 
 setopt AUTO_PUSHD
+setopt BRACE_CCL
 
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 
 export MAVEN_OPTS="-Xmx2048m -XX:MaxPermSize=512m"
 export _JAVA_OPTIONS="-Xmx2g"
-
-`zinc -J"-Xmx2G" -nailed`
 
 setopt shwordsplit
 setopt PROMPT_SUBST
@@ -88,6 +88,9 @@ schedprompt() {
 
 schedprompt
 
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
 # rbenv setup - https://github.com/sstephenson/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
