@@ -179,3 +179,6 @@ set foldlevel=99
 " Split behavior
 set splitbelow
 set splitright
+
+" Markdown-specific settings
+autocmd FileType markdown set formatoptions+=t | set tw=79
