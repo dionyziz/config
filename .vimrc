@@ -103,7 +103,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 :iab fales false
 
 " Trailing whitespace
-autocmd FileType c,cpp,java,php,python,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType c,cpp,java,php,python,ruby,js,haskell,css,html autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 command! W :w
 command! Q :q
