@@ -180,5 +180,8 @@ set foldlevel=99
 set splitbelow
 set splitright
 
+" Required by file system watchers for e.g. webpack --watch
+set backupcopy=yes
+
 " Markdown-specific settings
 autocmd FileType markdown set formatoptions+=t | set tw=79
