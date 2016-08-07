@@ -21,9 +21,9 @@ let g:molokai_original = 1
 " set undolevels=1000
 " set undoreload=10000
 set expandtab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set bs=2
 set ignorecase
 set smartcase
@@ -179,6 +179,9 @@ set foldlevel=99
 " Split behavior
 set splitbelow
 set splitright
+
+" Required by file system watchers for e.g. webpack --watch
+set backupcopy=yes
 
 " Markdown-specific settings
 autocmd FileType markdown set formatoptions+=t | set tw=79
