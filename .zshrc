@@ -63,9 +63,9 @@ bindkey '^R' history-incremental-search-backward
 export MAVEN_OPTS="-Xmx2048m -XX:MaxPermSize=512m"
 export _JAVA_OPTIONS="-Xmx2g"
 
-setopt shwordsplit
-setopt PROMPT_SUBST
-export PROMPT='$FG[089][$(users|sed "s/ /\n/g"|sort|uniq|grep -v `whoami`|wc -l)] %(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)%#%{$reset_color%} '
+# setopt shwordsplit
+# setopt PROMPT_SUBST
+export PROMPT='$FG[089]%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)%#%{$reset_color%} '
 
 schedprompt() {
     emulate -L zsh
@@ -90,9 +90,16 @@ schedprompt
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
-# rbenv setup - https://github.com/sstephenson/rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+export WORKON_HOME=~/.virtualenvs
+source /usr/local/bin/virtualenvwrapper_lazy.sh
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+
+export NVM_DIR="/home/dionyziz/.nvm"
+
+nvm() {
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+    nvm $@
+}
