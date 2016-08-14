@@ -1,4 +1,16 @@
-" Version: 1.24
+" Version: 1.6
+" <Vundle>
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+let g:ycm_confirm_extra_conf = 0
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+call vundle#end()            " required
+filetype plugin indent on    " required
+" </Vundle>
+
 if &term =~ "xterm" || &term =~ "screen"
  set t_Co=256
  if has("terminfo")
@@ -11,6 +23,8 @@ if &term =~ "xterm" || &term =~ "screen"
 endif
 
 call pathogen#infect()
+
+map <C-]> :YcmCompleter GoToImprecise<CR>
 
 let g:molokai_original = 1
 :colorscheme molokai
