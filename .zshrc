@@ -94,5 +94,3 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # rbenv setup - https://github.com/sstephenson/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
