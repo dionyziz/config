@@ -73,9 +73,6 @@ nnoremap <up> gk
 nnoremap <down> gj
 
 filetype plugin on 
-set ofu=syntaxcomplete#Complete
-au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
-au BufNewFile,BufRead *.less set filetype=less
 
 " Tab autocompletes
 function! Mosh_Tab_Or_Complete()
@@ -85,31 +82,9 @@ function! Mosh_Tab_Or_Complete()
         return "\<Tab>"
 endfunction
 
-vmap C :s/^/\/\/<cr>gv:s/^\/\/\/\/<cr>gv:s/^<cr>:noh<cr>
-
 :inoremap <Tab> <C-R>=Mosh_Tab_Or_Complete()<CR>
 
 autocmd BufRead,BufNewFile *.php setfiletype=php
-
-" ruby stuff
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-
-" Ctrl + L to lint in PHP
-:autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
-:noremap <C-L> :!/usr/bin/php -l %<CR>
-
-" XSLT abbreviations
-:iab xif <xsl:if test=""><CR></xsl:if><Up><Right><Right><Right><Right><Right>
-:iab xfor <xsl:for-each select=""><CR></xsl:for-each><Up><Right><Right><Right><Right><Right><Right><Right>
-:iab xcho <xsl:choose><CR><Tab><xsl:when test=""><CR></xsl:when><CR><xsl:otherwise><CR></xsl:otherwise><CR><BS></xsl:choose><Up><Up><Up><Up><Right><Right><Right><Right><Right><Right><Right>
-:iab xvo <xsl:value-of select="" /><Left><Left><Left><Left>
-:iab xtem <xsl:template match=""><CR></xsl:template><Esc>k$hi
-:iab xatt <xsl:attribute name=""><CR></xsl:attribute><Esc>k$hi
-
-" PHP abbreviations
-:iab phpcontroller <?php<CR><Tab>class Controller {<CR>public static function View() {<CR>}<CR>public static function Listing() {<CR>}<CR>public static function Create() {<CR>}<CR>public static function Update() {<CR>}<CR>public static function Delete() {<CR>}<CR><BS>}<CR><BS>?><Esc>gg<Down>WWi
 
 " Common typos
 :iab functino function
