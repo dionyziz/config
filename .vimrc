@@ -29,11 +29,10 @@ map <C-]> :YcmCompleter GoToImprecise<CR>
 let g:molokai_original = 1
 :colorscheme molokai
 
-" Requires vim 7.3
-" set undodir=~/.vim/undodir
-" set undofile
-" set undolevels=1000
-" set undoreload=10000
+set undodir=~/.vim/undodir
+set undofile
+set undolevels=1000
+set undoreload=10000
 set expandtab
 set tabstop=4
 set shiftwidth=4
