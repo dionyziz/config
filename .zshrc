@@ -94,3 +94,5 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # rbenv setup - https://github.com/sstephenson/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
