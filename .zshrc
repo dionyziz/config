@@ -94,10 +94,8 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # rbenv setup - https://github.com/sstephenson/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-source /usr/local/bin/virtualenvwrapper_lazy.sh
+# source /usr/local/bin/virtualenvwrapper_lazy.sh
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
-
-export NVM_DIR="/home/dionyziz/.nvm"
 
 nvm() {
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
