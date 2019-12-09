@@ -5,9 +5,9 @@
 [core]
     editor = vim
 [user]
-	name = Dionysis Zindros
-	email = dionyziz@gmail.com
-	signingkey = AFB046C7
+	name = Dionysis Zindros # put your name here
+	email = dionyziz@gmail.com # put your email here
+	signingkey = AFB046C7 # put your GPG key here if you have one
 [credential]
 	helper = cache --timeout=3600
 [diff]

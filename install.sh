@@ -32,3 +32,5 @@ do
     ln -v -s `pwd`/$file ~
   fi
 done
+
+echo "Please edit ~/.gitconfig now to use your own name and e-mail address."
