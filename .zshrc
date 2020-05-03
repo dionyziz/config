@@ -63,8 +63,8 @@ bindkey '^R' history-incremental-search-backward
 export MAVEN_OPTS="-Xmx2048m -XX:MaxPermSize=512m"
 export _JAVA_OPTIONS="-Xmx2g"
 
-# setopt shwordsplit
-# setopt PROMPT_SUBST
+setopt shwordsplit
+setopt PROMPT_SUBST
 export PROMPT='$FG[089]%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)%#%{$reset_color%} '
 
 schedprompt() {
@@ -81,23 +81,23 @@ schedprompt() {
     # to avoid error messages).
     # Otherwise it updates on entry to zle, so there's no loss.
     zle && zle reset-prompt
-
-    # This ensures we're not too far off the start of the minute
-    sched +1 schedprompt
 }
 
 schedprompt
+PATH=$PATH:/Library/TeX/texbin:/Users/dionyziz/workspace/latexrun:/Users/dionyziz/Library/Python/2.7/bin
+WORKON_HOME=~/Envs
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
+# # rbenv setup - https://github.com/sstephenson/rbenv
+# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+#
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
-# rbenv setup - https://github.com/sstephenson/rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
-# source /usr/local/bin/virtualenvwrapper_lazy.sh
-export PIP_VIRTUALENV_BASE=$WORKON_HOME
-
-nvm() {
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-    nvm $@
-}
+export PATH="/usr/local/opt/python@3.8/bin:$PATH"
