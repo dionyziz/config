@@ -1,15 +1,4 @@
-" Version: 1.6
-" <Vundle>
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-let g:ycm_confirm_extra_conf = 0
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
-call vundle#end()            " required
-filetype plugin indent on    " required
-" </Vundle>
+" Version: 1.7
 
 if &term =~ "xterm" || &term =~ "screen"
  set t_Co=256
