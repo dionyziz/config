@@ -4,17 +4,32 @@
     pretty = full
 [core]
     editor = vim
+    pager = delta --color-only # --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    light = false    # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+[merge]
+    conflictstyle = diff3
 [user]
-	name = Dionysis Zindros # put your name here
-	email = dionyziz@gmail.com # put your email here
-	signingkey = AFB046C7 # put your GPG key here if you have one
+    name = Dionysis Zindros # put your name here
+    email = dionyziz@gmail.com # put your email here
+    signingkey = AFB046C7 # put your GPG key here if you have one
 [credential]
-	helper = cache --timeout=3600
+    helper = cache --timeout=3600
 [diff]
-	renames = true
+    renames = true
+    colorMoved = default
 [push]
-	default = nothing
+    default = nothing
 [alias]
-  lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-  lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[rebase]
+	autosquash = true
+[interactive]
+    diffFilter = delta --color-only
+[hub]
+	protocol = ssh
+[init]
+	defaultBranch = master
