@@ -97,11 +97,6 @@ set pastetoggle=<F8>
 set mouse=v
 set nohidden
 
-nnoremap ; :
-nnoremap : ;
-vnoremap ; :
-vnoremap : ;
-
 " Restore cursor position to where it was before
 augroup JumpCursorOnEdit
    au!
